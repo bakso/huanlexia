@@ -1,0 +1,108 @@
+<div class="mainWrap">
+	<div class="conBox box-shadow">
+		<div class="toper">
+			<h2><?-topic.title?></h2>
+			<a href="javascript:;" id="J_DiggBtn" class="button orange dig <?if(topic.hasdig){?>hasdig<?}else{?>nodig<?}?>" data-id="<?-topic.id?>" isdigged="false" style="display: inline-block; " title="顶一下">
+				<span class="text"><span class="face">☻</span><span class="status"><?if(topic.hasdig){?>笑过<?}else{?>哈哈<?}?></span>( <span class="num"><?-topic.like_count?></span> )</span>
+				<span class="num-animation">+1</span>
+			</a>
+			<div class="change-wrap">
+          <a title="看上一个笑话" xh="4" class="arr-pre" <? if(topic.prev){?> href="/topic/<?=topic.prev.id?>" style="display: inline;"<?}?>>上一张</a>
+          <a title="看下一个笑话" xh="5" class="arr-next" <? if(topic.next){?> href="/topic/<?=topic.next.id?>" style="display: inline;"<?}?>>下一张</a>
+      </div>
+		</div>
+		<div class="content" id="J_Content">
+			<?-topic.content?>
+		</div>
+    <div class="share_box">
+      <div class="bshare-custom icon-medium-plus"><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到QQ空间" class="bshare-qzone" href="javascript:void(0);"></a><a title="分享到人人网" class="bshare-renren" href="javascript:void(0);"></a><a title="分享到腾讯微博" class="bshare-qqmb" href="javascript:void(0);"></a><a title="分享到i贴吧" class="bshare-itieba" href="javascript:void(0);"></a><a title="分享到花瓣" class="bshare-huaban" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count" style="float: none; ">6.09K</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=c1a65947-48fe-40f7-802c-b3ff49399333&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+      <script type="text/javascript" charset="utf-8">
+      bShare.addEntry({
+          title: "<?-topic.title?>",
+          summary: "#欢乐虾#搞笑图片",
+          pic: "<?-topic.pic?>"
+      });
+      </script>
+    </div>
+	</div>
+  <div class="module-style1 box-shadow">
+      <div class="box-hd">
+        <h3>评论</h3>
+      </div>
+      <div class="box-bd">
+        <script type='text/javascript' charset='utf-8' src='http://open.denglu.cc/connect/commentcode?appid=68826den1vmydPwtQnsgQWpnqJtJX3'></script>
+      </div>
+  </div>
+  <div class="module-style1 module-hot box-shadow">
+      <div class="box-hd">
+        <h3>每日精选笑话</h3>
+      </div>
+      <ul class="plist plist2">
+      <? _.each(goods, function(topic){ ?>
+        <? if(!topic._id) return ?>
+        <li>
+          <a href="/topic/<?=topic._id?>" title="<?=topic.title?>">
+            <?if(topic.from == "tao123"){?>
+            <img src="<?=topic.pic?>_130x130.jpg" alt="<?=topic.title?>"/>
+            <? }else{ ?>
+            <img src="<?=topic.thumb?>" alt="<?=topic.title?>"/>
+            <? } ?>
+          </a>
+        </li>
+      <? }) ?>
+      </ul>
+  </div>
+</div>
+
+
+<div class="sideBar">
+
+  <div class="module-style1 module-hot box-shadow">
+  	<div class="box-hd">
+  		<h3>最新笑话</h3>
+  		<a href="/list" target="_blank" class="more">更多>></a>
+  	</div>
+  	<ul class="plist">
+  	<? _.each(topics, function(topic){ ?>
+      <? if(!topic._id) return ?>
+  		<li>
+  			<a href="/topic/<?=topic._id?>" title="<?=topic.title?>">
+          <?if(topic.from == "tao123"){?>
+  				<img src="<?=topic.pic?>_110x110.jpg" alt="<?=topic.title?>"/>
+          <? }else{ ?>
+          <img src="<?=topic.thumb?>" alt="<?=topic.title?>"/>
+          <? } ?>
+  			</a>
+  		</li>
+  	<? }) ?>
+  	</ul>
+  </div>
+
+  <div class="module-style1 module-hot box-shadow">
+  	<div class="box-hd">
+  		<h3>赞助商</h3>
+  	</div>
+    <p style="margin:15px auto 5px 10px"><a href="http://www.aliyun.com" target="_blank" style="width: 135px;height:42px;display:block;overflow: hidden;"><img src="http://static.aliyun.com/images/www-summerwind/logo.gif"></a></p>
+  	<div class="feturebox">
+  	<script type="text/javascript"><!--
+  	google_ad_client = "ca-pub-9737515384910819";
+  	/* 欢乐虾 左侧 */
+  	google_ad_slot = "5107575072";
+  	google_ad_width = 250;
+  	google_ad_height = 250;
+  	//-->
+  	</script>
+  	<script type="text/javascript"
+  	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  	</script>
+  	</div>
+  </div>
+
+</div>
+
+
+
+
+
+
+

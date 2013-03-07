@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<? if(title){ ?>
+  <title><?=title?> - 欢乐虾 搞笑图片，笑话大全，爆笑冷笑话</title>
+<? }else{ ?>
+  <? if (topic.isHome) { ?>
+  <title>欢乐虾 搞笑图片，笑话大全，爆笑冷笑话</title>
+  <? }else{ ?>
+  <title><?=topic.title?> - 欢乐虾 搞笑图片，笑话大全，爆笑冷笑话</title>
+  <? }?>
+<? } ?>
+<meta keywords="欢乐虾,搞笑图片,笑话大全,爆笑,冷笑话" />
+<meta description="欢乐虾提供最最搞笑的搞笑图片，图片笑话，笑话大全，爆笑冷笑话" />
+<link href="/base.css" rel="stylesheet"/>
+<link href="/common.css" rel="stylesheet"/>
+<?if(page && (page=="list" || page.indexOf("hot") != -1)){?>
+<link rel="stylesheet" href="/list.css"/>
+<?}?>
+</head>
+<body>
+<div class="thepage">
+  <div class="header" id="header">
+    <div class="m-head">
+      <div class="layout960 clearfix">
+        <h1 class="g-logo">
+          <a href="/">欢乐虾<span class="goup"></span></a>
+        </h1>
+      </div>
+    </div>
+    <div class="m-nav">
+      <div class="layout960 clearfix">
+        <ul class="channel clearfix">
+          <li class="first"><a <?if(page=="index"){?>class="on"<? } ?> href="/">首页</a></li>
+          <li>
+            <a <?if(page=="list"){?>class="on"<? } ?> href="/list">最新笑话</a>
+          </li>
+          <li class="last">
+            <dl class="clearfix">
+              <dt><a <?if(page.indexOf("hot")!=-1){?>class="on"<? } ?> href="/hot">最热笑话</a></dt>
+              <dd><a <?if(page=="hot1"){?>class="on"<? } ?> href="/hot/1">24小时内</a></dd>
+              <dd><a <?if(page=="hot3"){?>class="on"<? } ?> href="/hot/3">3天内</a></dd>
+              <dd><a <?if(page=="hot7"){?>class="on"<? } ?> href="/hot/7">7天内</a></dd>
+              <dd><a <?if(page=="hot30"){?>class="on"<? } ?> href="/hot/30">30天内</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="content">
+    <?- body ?>
+  </div>
+  <div id="footer">
+    <p class="copyright">欢乐虾 &copy;2012</p>
+  </div>
+</div>
+<script src="/seajs-1.2.0/dist/sea.js" data-main="/index.js"></script>
+<div style="text-align:center">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3b0cf48ab488598fb9ad01b65a53f56d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</body>
+</html>
+

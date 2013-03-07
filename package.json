@@ -1,0 +1,23 @@
+{
+  "name": "huanlexia",
+  "version": "0.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "2.5.11",
+    "ejs": "0.7.2",
+    "mongoose": "2.7.1",
+    "mongoskin": "",
+    "underscore": "",
+    "jscex": "",
+    "jscex-jit": "",
+    "jscex-async": "",
+    "jscex-async-powerpack": "",
+    "memory-cache": "",
+    "node-cluster": ""
+  },
+  "scripts": {
+  	"runapp": "sudo node app.js"
+  },
+  "license": "BSD",
+  "author": "xhowhy"
+}
